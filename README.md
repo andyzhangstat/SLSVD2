@@ -2,26 +2,26 @@
 
 Two-way Sparse Logistic Singular Value Decomposition (SLSVD) for Binary Matrix Data
 
-![CI/CD](https://github.com/andyzhangstat/SLSVD/actions/workflows/ci-cd.yml/badge.svg)
-[![codecov](https://codecov.io/gh/andyzhangstat/SLSVD/branch/main/graph/badge.svg)](https://codecov.io/gh/andyzhangstat/SLSVD)
-[![Documentation Status](https://readthedocs.org/projects/slsvd/badge/?version=latest)](https://slsvd.readthedocs.io/en/latest/?badge=latest)
+<!-- ![CI/CD](https://github.com/andyzhangstat/SLSVD/actions/workflows/ci-cd.yml/badge.svg) -->
+<!-- [![codecov](https://codecov.io/gh/andyzhangstat/SLSVD/branch/main/graph/badge.svg)](https://codecov.io/gh/andyzhangstat/SLSVD) -->
+<!-- [![Documentation Status](https://readthedocs.org/projects/slsvd/badge/?version=latest)](https://slsvd.readthedocs.io/en/latest/?badge=latest) -->
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![version](https://img.shields.io/github/v/release/andyzhangstat/SLSVD)
+![version](https://img.shields.io/github/v/release/andyzhangstat/SLSVD2)
 [![Python 3.9.0](https://img.shields.io/badge/python-3.9.0-blue.svg)](https://www.python.org/downloads/release/python-390/)
-![release](https://img.shields.io/github/release-date/andyzhangstat/SLSVD)
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+<!-- ![release](https://img.shields.io/github/release-date/andyzhangstat/SLSVD) -->
+<!-- [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) -->
 
 
 
 
 ## Project Summary
 
-We implement the Sparse Logistic Singular Value Decomposition (SLSVD) using the Majorization-Minimization (MM) and coordinate descent (CD) algorithms in this Python package. 
+We implement the Two-way Sparse Logistic Singular Value Decomposition (SLSVD2) using the Majorization-Minimization (MM) and coordinate descent (CD) algorithms in this Python package. 
 
 Our package consists of three major components:
 
-1. Simulated binary data generation
-2. Sparse logistic SVD 
+1. Simulated two-way binary data generation
+2. Two-way sparse logistic SVD 
 3. Metrics for evaluating estimations
 
 
@@ -29,11 +29,11 @@ Our package consists of three major components:
 
 There are two major functions in this package:
 
-`generate_data(n, d, rank, random_seed=123)`: This function generates random binary data points. It takes four parameters: `n` for the number of data points, `d` for the number of features, `rank` for the number of rank, and `random_seed` for ensuring reproducibility.
+`generate_data_2_way(n, d, rank, random_seed=123)`: This function generates random binary data points. It takes four parameters: `n` for the number of data points, `d` for the number of features, `rank` for the number of rank, and `random_seed` for ensuring reproducibility.
 
-`sparse_logistic_svd_coord(dat, lambdas=np.logspace(-2, 2, num=10), k=2, quiet=True,
+`sparse_logistic_svd_coord_2_way(dat, lambdas=np.logspace(-2, 2, num=10), etas=np.logspace(-2, 2, num=10), k=2, quiet=True,
                            max_iters=100, conv_crit=1e-5, randstart=False,
-                           normalize=False, start_A=None, start_B=None, start_mu=None)`: This function performs Sparse Logistic Singular Value Decomposition (SLSVD) using Majorization-Minimization and Coordinate Descent algorithms. 
+                           normalize=False, start_A=None, start_B=None, start_mu=None)`: This function performs Twao-way Sparse Logistic Singular Value Decomposition (SLSVD) using Majorization-Minimization and Coordinate Descent algorithms. 
 
 
 
@@ -60,7 +60,7 @@ There are two major functions in this package:
 
 ## Python Ecosystem Context
 
-**SLSVD** establishes itself as a valuable enhancement to the Python ecosystem. There is no function in the Python package `scikit-learn` has similar functionality,  our implementation uses Majorization-Minimization and Coordinate Descent algorithms.
+**SLSVD2** establishes itself as a valuable enhancement to the Python ecosystem. There is no function in the Python package `scikit-learn` has similar functionality,  our implementation uses Majorization-Minimization and Coordinate Descent algorithms.
 
 
 
@@ -74,8 +74,8 @@ Make sure Miniconda or Anaconda is installed on your system
 #### Step 1: Clone the Repository
 
 ```bash
-git clone git@github.com:andyzhangstat/SLSVD.git
-cd SLSVD  # Navigate to the cloned repository directory
+git clone git@github.com:andyzhangstat/SLSVD2.git
+cd SLSVD2  # Navigate to the cloned repository directory
 ```
 
 #### Step 2: Create and Activate the Conda Environment
@@ -83,16 +83,16 @@ cd SLSVD  # Navigate to the cloned repository directory
 ```bash
 # Method 1: create Conda Environment from the environment.yml file
 conda env create -f environment.yml  # Create Conda environment
-conda activate SLSVD  # Activate the Conda environment
+conda activate SLSVD2  # Activate the Conda environment
 
 # Method 2: create Conda Environment 
-conda create --name SLSVD python=3.9 -y
-conda activate SLSVD
+conda create --name SLSVD2 python=3.9 -y
+conda activate SLSVD2
 ```
 
 #### Step 3: Install the Package Using Poetry
 
-Ensure the Conda environment is activated (you should see (SLSVD) in the terminal prompt)
+Ensure the Conda environment is activated (you should see (SLSVD2) in the terminal prompt)
 
 ```bash
 poetry install  # Install the package using Poetry
@@ -102,12 +102,12 @@ poetry install  # Install the package using Poetry
 
 ```bash
 # Check line coverage
-pytest --cov=SLSVD
+pytest --cov=SLSVD2
 
 # Check branch coverage
-pytest --cov-branch --cov=SLSVD
+pytest --cov-branch --cov=SLSVD2
 poetry run pytest --cov-branch --cov=src
-poetry run pytest --cov-branch --cov=SLSVD --cov-report html
+poetry run pytest --cov-branch --cov=SLSVD2 --cov-report html
 ```
 
 #### Troubleshooting
@@ -223,7 +223,7 @@ array([[1.        , 0.00111067],
 
 Online documentation is available [readthedocs](https://slsvd.readthedocs.io/en/latest/?badge=latest).
 
-Publishing on [TestPyPi](https://test.pypi.org/project/slsvd/) and [PyPi](https://pypi.org/project/slsvd/). 
+Publishing on [TestPyPi](https://test.pypi.org/project/slsvd2/) and [PyPi](https://pypi.org/project/slsvd2/). 
 
 ## Contributors
 
