@@ -33,7 +33,7 @@ There are two major functions in this package:
 
 `sparse_logistic_svd_coord_2_way(dat, lambdas=np.logspace(-2, 2, num=10), etas=np.logspace(-2, 2, num=10), k=2, quiet=True,
                            max_iters=100, conv_crit=1e-5, randstart=False,
-                           normalize=False, start_A=None, start_B=None, start_mu=None)`: This function performs Twao-way Sparse Logistic Singular Value Decomposition (SLSVD) using Majorization-Minimization and Coordinate Descent algorithms. 
+                           normalize=False, start_A=None, start_B=None, start_mu=None)`: This function performs Two-way Sparse Logistic Singular Value Decomposition (SLSVD) using Majorization-Minimization and Coordinate Descent algorithms. 
 
 
 
@@ -44,6 +44,7 @@ There are two major functions in this package:
 - `random_seed` (integer): Random seed to ensure reproducibility.
 - `dat`: Input data matrix.
 - `lambdas`: Array of regularization parameters.
+- `etas`: Array of regularization parameters.
 - `k`: Number of components.
 - `quiet`: Boolean to suppress iteration printouts.
 - `max_iters`: Maximum number of iterations.
@@ -118,7 +119,7 @@ poetry run pytest --cov-branch --cov=SLSVD2 --cov-report html
 
 ## Usage
 
-Use this package to find the optimized score and loading matrices of sparse logistic Singular Value Decomposition. In the following example, we generate a simulated data set with defined size first. By the Majorization-Minimization and Coordinate Descent algorithms, we obtain the optimized score and loading matrices. Finally, we visualize both the simulated data and fitted loadings in one figure.
+Use this package to find the optimized score and loading matrices of two-way sparse logistic Singular Value Decomposition. In the following example, we generate a simulated data set with defined size first. By the Majorization-Minimization and Coordinate Descent algorithms, we obtain the optimized score and loading matrices. Finally, we visualize both the simulated data and fitted loadings in one figure.
 
 Example usage:
 
@@ -126,7 +127,7 @@ Example usage:
 >>> from slsvd.data_generation import generate_data
 >>> import numpy as np
 >>> import matplotlib.pyplot as plt
->>> bin_mat, loadings, scores, diagonal=generate_data(n=200, d=100, rank=2, random_seed=123)
+>>> bin_mat, loadings, scores, diagonal=generate_data_2_way(n=200, d=100, rank=2, random_seed=123)
 
 # Check shapes
 >>> print("Binary Matrix Shape:", bin_mat.shape)
@@ -151,8 +152,8 @@ Loadings Shape: (100, 2)
 Scores Shape: (200, 2)
 
 Dot Product of Scores:
-array([[195.4146256 ,   2.67535881],
-       [  2.67535881, 200.14653178]])
+array([[1., 0.],
+       [0., 1.]])
 
 Dot Product of Loadings:
 array([[1., 0.],
@@ -162,19 +163,20 @@ array([[1., 0.],
 
 
 ```python
->>> plt.figure(figsize=(8, 12))
->>> cmap = plt.cm.get_cmap('viridis', 2)
-
+>>> plt.figure(figsize=(6, 9)) 
+>>> colors = ['cyan', 'magenta']
+>>> cmap = plt.matplotlib.colors.ListedColormap(colors, name='custom_cmap', N=2)
 >>> plt.imshow(bin_mat, cmap=cmap, interpolation='nearest')
-
 >>> cbar = plt.colorbar(ticks=[0.25, 0.75])
 >>> cbar.ax.set_yticklabels(['0', '1'])
-
->>> plt.title('Heatmap of Binary Matrix')
+>>> plt.title('Heatmap of Simulated Binary Matrix')
 >>> plt.xlabel('Feature')
 >>> plt.ylabel('Sample')
 
+>>> plt.tight_layout()
+
 >>> plt.show()
+
 ```
 
 
@@ -187,7 +189,7 @@ array([[1., 0.],
 >>> import numpy as np
 
 >>> # Perform Sparse Logistic SVD
->>> mu, A, B, zeros, BICs = sparse_logistic_svd_coord(bin_mat, lambdas=np.logspace(-2, 1, num=10), k=2)
+>>> mu, A, B, S, zeros, BICs = sparse_logistic_svd_coord_2_way(bin_mat, lambdas=np.logspace(-2, 1, num=10), etas=np.logspace(-2, 1, num=10), k=2)
 
 >>> # Calculate mean of mu
 >>> print("Mean of mu:", np.mean(mu))
@@ -203,15 +205,15 @@ array([[1., 0.],
 
 
 ```
-Mean of mu: 0.052624279581212116
+Mean of mu: 0.07933574417007386
 
 Dot Product of Scores:
-array([[7672.61634966,  277.23466856],
-       [ 277.23466856, 3986.24113586]])
+array([[1.        , 0.02601576],
+       [0.02601576, 1.        ]])
 
 Dot Product of Loadings:
-array([[1.        , 0.00111067],
-       [0.00111067, 1.        ]])
+array([[1.        , 0.03334437],
+       [0.03334437, 1.        ]])
 
 ```
 
@@ -221,8 +223,7 @@ array([[1.        , 0.00111067],
 ## Documentations
 
 
-Online documentation is available [readthedocs](https://slsvd.readthedocs.io/en/latest/?badge=latest).
-
+Online documentation is available [readthedocs](https://slsvd2.readthedocs.io/en/latest/?badge=latest).
 Publishing on [TestPyPi](https://test.pypi.org/project/slsvd2/) and [PyPi](https://pypi.org/project/slsvd2/). 
 
 ## Contributors
