@@ -4,12 +4,12 @@ Two-way Sparse Logistic Singular Value Decomposition (SLSVD) for Binary Matrix D
 
 <!-- ![CI/CD](https://github.com/andyzhangstat/SLSVD/actions/workflows/ci-cd.yml/badge.svg) -->
 <!-- [![codecov](https://codecov.io/gh/andyzhangstat/SLSVD/branch/main/graph/badge.svg)](https://codecov.io/gh/andyzhangstat/SLSVD) -->
-<!-- [![Documentation Status](https://readthedocs.org/projects/slsvd/badge/?version=latest)](https://slsvd.readthedocs.io/en/latest/?badge=latest) -->
+[![Documentation Status](https://readthedocs.org/projects/slsvd/badge/?version=latest)](https://slsvd2.readthedocs.io/en/latest/?badge=latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![version](https://img.shields.io/github/v/release/andyzhangstat/SLSVD2)
 [![Python 3.9.0](https://img.shields.io/badge/python-3.9.0-blue.svg)](https://www.python.org/downloads/release/python-390/)
-<!-- ![release](https://img.shields.io/github/release-date/andyzhangstat/SLSVD) -->
-<!-- [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) -->
+![release](https://img.shields.io/github/release-date/andyzhangstat/SLSVD2)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 
 
@@ -180,7 +180,7 @@ array([[1., 0.],
 ```
 
 
-<img src="https://github.com/andyzhangstat/SLSVD2/blob/main/img/heatmap.png" width="300" height="450">
+<img src="https://github.com/andyzhangstat/SLSVD2/blob/main/img/heatmap.png?raw=true" width="300" height="450">
 
 
 
@@ -188,7 +188,7 @@ array([[1., 0.],
 >>> from slsvd.slsvd import sparse_logistic_svd_coord
 >>> import numpy as np
 
->>> # Perform Sparse Logistic SVD
+>>> # Perform Two-way Sparse Logistic SVD
 >>> mu, A, B, S, zeros, BICs = sparse_logistic_svd_coord_2_way(bin_mat, lambdas=np.logspace(-2, 1, num=10), etas=np.logspace(-2, 1, num=10), k=2)
 
 >>> # Calculate mean of mu
