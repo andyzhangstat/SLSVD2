@@ -2,8 +2,6 @@ import numpy as np
 from scipy.special import expit
 
 
-
-    
 def gram_schmidt(matrix):
     q, r = np.linalg.qr(matrix)
     return q
@@ -31,8 +29,8 @@ def generate_data_2_way(n, d, rank, random_seed=123):
 
     Examples
     --------
-    >>> from slsvd.data_generation import generate_data
-    >>> generate_data_lr(n=50, d=100, rank=2, random_seed=123)
+    >>> from slsvd2.data2 import generate_data_2_way
+    >>> generate_data_2_way(n=50, d=100, rank=2, random_seed=123)
     """
     
     if not isinstance(n, int):

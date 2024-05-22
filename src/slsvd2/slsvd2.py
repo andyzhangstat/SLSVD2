@@ -59,10 +59,11 @@ def sparse_logistic_svd_coord_2_way(dat, lambdas=np.logspace(-2, 2, num=10), eta
 
     Returns:
     tuple
-        Tuple containing mu, A, B, zeros_mat, BICs.
+        Tuple containing mu, A, B, S, zeros_mat, BICs.
         - mu: The mean vector.
         - A: The matrix A.
         - B: The matrix B.
+        - S: The matrix S.
         - zeros_mat: Matrix indicating the number of zeros in each component.
         - BICs: Matrix containing the Bayesian Information Criterion for each component.
     """
