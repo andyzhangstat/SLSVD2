@@ -4,7 +4,7 @@ Two-way Sparse Logistic Singular Value Decomposition (SLSVD) for Binary Matrix D
 
 <!-- ![CI/CD](https://github.com/andyzhangstat/SLSVD/actions/workflows/ci-cd.yml/badge.svg) -->
 <!-- [![codecov](https://codecov.io/gh/andyzhangstat/SLSVD/branch/main/graph/badge.svg)](https://codecov.io/gh/andyzhangstat/SLSVD) -->
-[![Documentation Status](https://readthedocs.org/projects/slsvd/badge/?version=latest)](https://slsvd2.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/slsvd2/badge/?version=latest)](https://slsvd2.readthedocs.io/en/latest/?badge=latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![version](https://img.shields.io/github/v/release/andyzhangstat/SLSVD2)
 [![Python 3.9.0](https://img.shields.io/badge/python-3.9.0-blue.svg)](https://www.python.org/downloads/release/python-390/)
@@ -124,7 +124,7 @@ Use this package to find the optimized score and loading matrices of two-way spa
 Example usage:
 
 ```python
->>> from slsvd.data_generation import generate_data
+>>> from slsvd2.data2 import generate_data_2_way
 >>> import numpy as np
 >>> import matplotlib.pyplot as plt
 >>> bin_mat, loadings, scores, diagonal=generate_data_2_way(n=200, d=100, rank=2, random_seed=123)
@@ -185,7 +185,7 @@ array([[1., 0.],
 
 
 ```python
->>> from slsvd.slsvd import sparse_logistic_svd_coord
+>>> from slsvd2.slsvd2 import sparse_logistic_svd_coord_2_way
 >>> import numpy as np
 
 >>> # Perform Two-way Sparse Logistic SVD
