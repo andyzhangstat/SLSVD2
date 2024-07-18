@@ -1,6 +1,6 @@
 # SLSVD2
 
-Two-way Sparse Logistic Singular Value Decomposition (SLSVD) for Binary Matrix Data
+Two-way Sparse Logistic Singular Value Decomposition (SLSVD) for Binary Matrix Data <img src="https://github.com/andyzhangstat/SLSVD2/blob/main/img/logo.png?raw=true" align="right" height="100">
 
 <!-- ![CI/CD](https://github.com/andyzhangstat/SLSVD/actions/workflows/ci-cd.yml/badge.svg) -->
 <!-- [![codecov](https://codecov.io/gh/andyzhangstat/SLSVD/branch/main/graph/badge.svg)](https://codecov.io/gh/andyzhangstat/SLSVD) -->
