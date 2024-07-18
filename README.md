@@ -1,6 +1,6 @@
 # SLSVD2
 
-Two-way Sparse Logistic Singular Value Decomposition (SLSVD) for Binary Matrix Data <img src="https://github.com/andyzhangstat/SLSVD2/blob/main/img/logo.png?raw=true" align="right" height="100">
+Two-way Sparse Logistic Singular Value Decomposition (SLSVD2) for Binary Matrix Data <img src="https://github.com/andyzhangstat/SLSVD2/blob/main/img/logo.png?raw=true" align="right" height="100">
 
 <!-- ![CI/CD](https://github.com/andyzhangstat/SLSVD/actions/workflows/ci-cd.yml/badge.svg) -->
 <!-- [![codecov](https://codecov.io/gh/andyzhangstat/SLSVD/branch/main/graph/badge.svg)](https://codecov.io/gh/andyzhangstat/SLSVD) -->
@@ -238,11 +238,11 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 
 ## License
 
-`slsvd2` was created by Andy Zhang. It is licensed under the terms of the MIT license.
+`SLSVD2` was created by Andy Zhang. It is licensed under the terms of the MIT license.
 
 ## Credits
 
-`slsvd2` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
+`SLSVD2` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
 
 
 
